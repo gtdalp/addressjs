@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>addressJs</title>
+<link rel="stylesheet" type="text/css" href="../src/css/base.css" />
+<link rel="stylesheet" type="text/css" href="addressjs.css" />
+<script src="../src/jslib/zepto.min.js"></script>
+<script src="../src/jslib/iscroll.js"></script>
+<script src="../build/addressjs.min.js"></script>
+<script>
+$(function () {
+    var defaultAddressJs = $('.default-address').addressJs({
+        // 自定义默认选中值（必选） 值为key值  根据长度显示列数（最大值为3列）
+        selected: ['', '', ''],
+        // 确认回调 默认加载有回调一次
+        confirm: function (data) {
+            var address = '';
+            for (var i = 0; i < data.length; i++) {
+                address += data[i]['n'];
+            }
+            $('#default-address').html(address);
+        }
+    });
+    $('#default-address').click(function () {
+        // 显示
+        defaultAddressJs.show();
+    });
+    // 
+    var addressJs = $('.receipt-address').addressJs({
+        // false默认不显示 true显示
+        show: false,
+        // 自定义默认选中值（必选） 值为key值  根据长度显示列数（最大值为3列）
+        selected: ['310000', '320000', '320400'],
+        // 取消回调
+        cancel: function () {  
+            //
+        },
+        // 确认回调 默认加载有回调一次
+        confirm: function (data) {
+            var address = '';
+            for (var i = 0; i < data.length; i++) {
+                address += data[i]['n'];
+            }
+            $('#receipt-address').html(address);
+        }
+    });
+    $('body').click(function(){
+        // 销毁
+        // addressJs.destroy();
+        // 显示
+        // addressJs.show();
+    });
+    $('#receipt-address').click(function () {
+        var selected = [];
+        // 显示
+        addressJs.show(selected);
+    });
+    
+});
+</script>
+</head>
+<body>
+<style type="text/css">
+.select>li{
+    height:40px;
+    line-height:40px;
+    padding:0 15px;
+    border-bottom:1px solid #ccc;
+    font-size:14px;
+}
+.select>li>label{
+    margin-right:10px;
+}
+.select>li>span{
+    display:block;
+    position: relative;
+    text-align:right;
+    overflow:hidden;
+    color:#999;
+}
+</style>
+<div class="default-address"></div>
+<div class="receipt-address"></div>
+<ul class="select">
+    <li>
+        <label class="l">默认地址</label>
+        <span class="textOverflow" id="default-address"></span>
+    </li>
+    <li>
+        <label class="l">收货地址</label>
+        <span class="textOverflow" id="receipt-address"></span>
+    </li>
+</ul>
+</body>
+</html>
