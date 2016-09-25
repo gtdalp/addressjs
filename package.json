@@ -1,6 +1,6 @@
 {
   "name": "addressjs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "addressJs移动端选择地址组件",
   "main": "index.js",
   "scripts": {

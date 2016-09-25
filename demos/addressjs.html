@@ -25,16 +25,12 @@ $(function () {
             $('#default-address').html(address);
         }
     });
-    $('#default-address').click(function () {
-        // 显示
-        defaultAddressJs.show();
-    });
-    // 
+    
     var addressJs = $('.receipt-address').addressJs({
         // false默认不显示 true显示
         show: false,
         // 自定义默认选中值（必选） 值为key值  根据长度显示列数（最大值为3列）
-        selected: ['310000', '320000', '320400'],
+        selected: ['440000', '440300', '440305'],
         // 取消回调
         cancel: function () {  
             //
@@ -48,11 +44,11 @@ $(function () {
             $('#receipt-address').html(address);
         }
     });
-    $('body').click(function(){
+    $('#default-address').click(function(){
         // 销毁
-        // addressJs.destroy();
+        // defaultAddressJs.destroy();
         // 显示
-        // addressJs.show();
+        defaultAddressJs.show();
     });
     $('#receipt-address').click(function () {
         var selected = [];

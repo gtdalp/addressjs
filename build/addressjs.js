@@ -1,7 +1,7 @@
 /**
  * addressJs
  * xisa
- * 0.1.0(2014-2016)
+ * 0.0.2(2014-2016)
  */
  /*
  	依赖iscroll 
@@ -23,7 +23,7 @@
     	this.init(options);
     }
     AddressJs.prototype = {
-        version: '0.0.1',
+        version: '0.0.2',
         // 初始化
         init: function (options) {
         	this.options = {};
