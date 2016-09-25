@@ -22,7 +22,7 @@ var defaultAddressJs = $('.default-address').addressJs({
 });
 ```
 ###效果图
-![demo1.png]
+![demo1.png](demo1.png)
 
 
 
