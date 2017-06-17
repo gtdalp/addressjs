@@ -2,7 +2,7 @@
   "name": "addressjs",
   "version": "0.0.2",
   "description": "addressJs组件是移动端拖动选择省市区组件，有联动功能，兼容市场上主流机型。启动demo需要启用服务器打开demo页面",
-  "main": "addressjs.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
